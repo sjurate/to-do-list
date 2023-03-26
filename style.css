@@ -1,0 +1,204 @@
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 36px;
+  min-height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(38, 149, 112);
+}
+
+h2 {
+  font-size: 36px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 72px;
+}
+
+.form {
+  margin-bottom: 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 480px;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 24px;
+}
+
+.form__input {
+  font-size: 18px;
+  line-height: 1.8;
+  padding-left: 6px;
+  max-width: 460px;
+  max-height: 320px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.add__btn {
+  width: 72px;
+  align-self: flex-end;
+  padding: 8px 12px;
+  font-size: 18px;
+  background-color: rgb(38, 149, 112);
+  color: #fff;
+  border-radius: 3px;
+}
+
+.add__btn:hover {
+  cursor: pointer;
+}
+
+.sort__menu {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.sort__menu button {
+  background-color: rgb(38, 149, 112);
+  color: #fff;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.sort__menu button:hover {
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 56px;
+}
+
+.single__task {
+  display: flex;
+  gap: 12px;
+  border: 1px solid #bebcbc;
+  min-height: 54px;
+  border-radius: 4px;
+}
+
+.single__task__info {
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 0 12px 6px;
+}
+
+.description {
+  max-width: 400px;
+}
+
+.single__task__btns {
+  width: 24%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 6px;
+}
+
+.single__task__btns > * {
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.delete__btn {
+  background-color: rgb(216, 105, 64);
+  color: #fff;
+}
+
+.delete__btn:hover {
+  cursor: pointer;
+}
+
+.check-container {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  content: "";
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.checkmark:hover {
+  cursor: pointer;
+}
+
+.completed__true {
+  text-decoration: line-through;
+}
+
+.check {
+  background-color: green;
+}
+
+.check::before {
+  position: absolute;
+  left: 0;
+  top: 42%;
+  height: 40%;
+  width: 3px;
+  background-color: #fff;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}
+
+.check::after {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 4px;
+  width: 70%;
+  background-color: #fff;
+  content: "";
+  transform: translateX(10px) rotate(-45deg);
+  transform-origin: left bottom;
+}

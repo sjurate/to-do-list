@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js" type="module"></script>
+    <title>Let's Do It</title>
+  </head>
+  <body>
+    <header>
+      <h2>Let's get proud!</h2>
+    </header>
+    <main>
+      <div class="container">
+        <form class="form">
+          <div class="form__row">
+            <label class="form__label">Task</label>
+            <input
+              class="input form__input form__input--description"
+              role="textbox"
+              contenteditable
+              placeholder="I need to..."
+              required
+            ></input>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Deadline</label>
+            <input
+              class="form__input form__input--time"
+              type="datetime-local"
+            />
+          </div>
+          <button class="add__btn">Add</button>
+        </form>
+        <div class="sort__menu">
+        <button class="sort__byDate">Latest first</button>
+        <button class="sort__byCompleted">Completed first</button>
+        <button class="sort__byTimeLeft">Least time left</button>
+      </div>
+
+
+        <div class="list-container">
+          <ul class="list"></ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
