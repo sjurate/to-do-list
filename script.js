@@ -1,3 +1,5 @@
+import { testData } from "./data.js";
+
 const form = document.querySelector(".form");
 const listContainer = document.querySelector(".list");
 const inputDescription = document.querySelector(".form__input--description");
@@ -26,9 +28,10 @@ class App {
   dateNow;
 
   constructor() {
+    sessionStorage.setItem("tasks", JSON.stringify(testData));
     this.dateNow = Date.now();
     addBtn.addEventListener("click", this.addTask.bind(this));
-    this.getLocalStorage();
+    this.getSessionStorage();
     this.updateList(this.list);
     newestSort.addEventListener("click", this.sortByDate.bind(this));
     completedSort.addEventListener("click", this.sortByCompleted.bind(this));
@@ -122,8 +125,8 @@ class App {
     listContainer.innerHTML = html;
   }
 
-  getLocalStorage() {
-    const data = JSON.parse(localStorage.getItem("tasks"));
+  getSessionStorage() {
+    const data = JSON.parse(sessionStorage.getItem("tasks"));
     if (!data) return;
     for (let item of data) {
       if (item.deadline !== Infinity && item.deadline !== null) {
@@ -136,8 +139,8 @@ class App {
   }
 
   updateList(updatedList) {
-    localStorage.setItem("tasks", JSON.stringify(updatedList));
-    this.getLocalStorage();
+    sessionStorage.setItem("tasks", JSON.stringify(updatedList));
+    this.getSessionStorage();
     this.renderTasks(this.list);
 
     const completeBtns = document.querySelectorAll(".complete__btn");
